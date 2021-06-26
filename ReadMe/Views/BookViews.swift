@@ -34,9 +34,11 @@ struct Book_Previews: PreviewProvider {
 
 extension Image {
     init?(title: String) {
-        guard let character = title.first else {return nil}
-        let symbolName = "\(character.lowercased()).square"
-        guard UIImage(systemName: symbolName) != nil else {return nil}
+        guard
+            let character = title.first,
+            case let symbolName = "\(character.lowercased()).square",
+            UIImage(systemName: symbolName) != nil
+        else {return nil}
         self.init(systemName: symbolName)
     }
 }
