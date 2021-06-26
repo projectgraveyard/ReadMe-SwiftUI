@@ -24,7 +24,11 @@ extension Book {
 
 struct Book_Previews: PreviewProvider {
     static var previews: some View {
-        Book.Image(title: Book().title)
+        VStack {
+            Book.Image(title: Book().title)
+            Book.Image(title: "")
+            Book.Image(title: "📖")
+        }
     }
 }
 
@@ -32,6 +36,7 @@ extension Image {
     init?(title: String) {
         guard let character = title.first else {return nil}
         let symbolName = "\(character.lowercased()).square"
+        guard UIImage(systemName: symbolName) != nil else {return nil}
         self.init(systemName: symbolName)
     }
 }
