@@ -12,6 +12,7 @@
 		F2A58F3126878D8500B51886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A58F3026878D8500B51886 /* Assets.xcassets */; };
 		F2A58F3426878D8500B51886 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A58F3326878D8500B51886 /* Preview Assets.xcassets */; };
 		F2A58F412687973000B51886 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F402687973000B51886 /* Book.swift */; };
+		F2A58F44268797D500B51886 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F43268797D500B51886 /* BookViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F2A58F3326878D8500B51886 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2A58F3526878D8500B51886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2A58F402687973000B51886 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F2A58F43268797D500B51886 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				F2A58F2C26878D8200B51886 /* ReadMeApp.swift */,
-				F2A58F2E26878D8200B51886 /* ContentView.swift */,
+				F2A58F42268797A400B51886 /* Views */,
 				F2A58F3026878D8500B51886 /* Assets.xcassets */,
 				F2A58F3526878D8500B51886 /* Info.plist */,
 				F2A58F3226878D8500B51886 /* Preview Content */,
@@ -70,6 +72,15 @@
 				F2A58F3326878D8500B51886 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2A58F42268797A400B51886 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2A58F2E26878D8200B51886 /* ContentView.swift */,
+				F2A58F43268797D500B51886 /* BookViews.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 				F2A58F2F26878D8200B51886 /* ContentView.swift in Sources */,
 				F2A58F2D26878D8200B51886 /* ReadMeApp.swift in Sources */,
 				F2A58F412687973000B51886 /* Book.swift in Sources */,
+				F2A58F44268797D500B51886 /* BookViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
