@@ -59,12 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				F2A58F2C26878D8200B51886 /* ReadMeApp.swift */,
+				F2A58F402687973000B51886 /* Book.swift */,
+				F21F6C85268A7035009395E7 /* Library.swift */,
 				F2A58F42268797A400B51886 /* Views */,
 				F2A58F3026878D8500B51886 /* Assets.xcassets */,
 				F2A58F3526878D8500B51886 /* Info.plist */,
 				F2A58F3226878D8500B51886 /* Preview Content */,
-				F2A58F402687973000B51886 /* Book.swift */,
-				F21F6C85268A7035009395E7 /* Library.swift */,
 			);
 			path = ReadMe;
 			sourceTree = "<group>";
