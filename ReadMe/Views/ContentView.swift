@@ -7,23 +7,31 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View {    
     var body: some View {
-        BookRow(book: .init())
+        NavigationView {
+            List(Library().sortedBooks, id: \.title) { book in
+                BookRow(book: book)
+            }
+            .navigationBarTitle("My Library")
+        }
     }
 }
 
 struct BookRow: View {
     let book: Book
     var body: some View {
-        HStack {
-            Book.Image(title: book.title)
-            VStack(alignment: .leading) {
-                Text(book.title)
-                    .font(.title2)
-                Text(book.author)
-                    .font(.title3)
-                    .foregroundColor(.secondary)
+        NavigationLink(destination: DetailView(book: book)){
+            HStack {
+                Book.Image(title: book.title)
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                        .font(.title2)
+                    Text(book.author)
+                        .font(.title3)
+                        .foregroundColor(.secondary)
+                }
+                .lineLimit(1)
             }
         }
     }
