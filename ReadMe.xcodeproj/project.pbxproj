@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F21F6C86268A7035009395E7 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F6C85268A7035009395E7 /* Library.swift */; };
 		F21F6C88268A72FE009395E7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F6C87268A72FE009395E7 /* DetailView.swift */; };
+		F2266933268B72EC0038C4F3 /* PHPickerViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2266932268B72EC0038C4F3 /* PHPickerViewController.View.swift */; };
 		F2A58F2D26878D8200B51886 /* ReadMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F2C26878D8200B51886 /* ReadMeApp.swift */; };
 		F2A58F2F26878D8200B51886 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F2E26878D8200B51886 /* ContentView.swift */; };
 		F2A58F3126878D8500B51886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2A58F3026878D8500B51886 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		F21F6C85268A7035009395E7 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		F21F6C87268A72FE009395E7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		F2266932268B72EC0038C4F3 /* PHPickerViewController.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerViewController.View.swift; sourceTree = "<group>"; };
 		F2A58F2926878D8200B51886 /* ReadMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A58F2C26878D8200B51886 /* ReadMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeApp.swift; sourceTree = "<group>"; };
 		F2A58F2E26878D8200B51886 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F2A58F2E26878D8200B51886 /* ContentView.swift */,
 				F2A58F43268797D500B51886 /* BookViews.swift */,
 				F21F6C87268A72FE009395E7 /* DetailView.swift */,
+				F2266932268B72EC0038C4F3 /* PHPickerViewController.View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				F21F6C88268A72FE009395E7 /* DetailView.swift in Sources */,
 				F2A58F2D26878D8200B51886 /* ReadMeApp.swift in Sources */,
 				F21F6C86268A7035009395E7 /* Library.swift in Sources */,
+				F2266933268B72EC0038C4F3 /* PHPickerViewController.View.swift in Sources */,
 				F2A58F412687973000B51886 /* Book.swift in Sources */,
 				F2A58F44268797D500B51886 /* BookViews.swift in Sources */,
 			);
