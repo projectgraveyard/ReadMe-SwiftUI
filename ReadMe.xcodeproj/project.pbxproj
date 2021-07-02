@@ -17,6 +17,7 @@
 		F2A58F412687973000B51886 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F402687973000B51886 /* Book.swift */; };
 		F2A58F44268797D500B51886 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A58F43268797D500B51886 /* BookViews.swift */; };
 		F2F5A2D9268FC1720076CCDB /* ReviewAndImageStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5A2D8268FC1720076CCDB /* ReviewAndImageStack.swift */; };
+		F2F5A2DB268FC1F60076CCDB /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5A2DA268FC1F60076CCDB /* NewBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F2A58F402687973000B51886 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F2A58F43268797D500B51886 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
 		F2F5A2D8268FC1720076CCDB /* ReviewAndImageStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAndImageStack.swift; sourceTree = "<group>"; };
+		F2F5A2DA268FC1F60076CCDB /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				F21F6C87268A72FE009395E7 /* DetailView.swift */,
 				F2266932268B72EC0038C4F3 /* PHPickerViewController.View.swift */,
 				F2F5A2D8268FC1720076CCDB /* ReviewAndImageStack.swift */,
+				F2F5A2DA268FC1F60076CCDB /* NewBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				F2A58F2F26878D8200B51886 /* ContentView.swift in Sources */,
 				F21F6C88268A72FE009395E7 /* DetailView.swift in Sources */,
+				F2F5A2DB268FC1F60076CCDB /* NewBookView.swift in Sources */,
 				F2A58F2D26878D8200B51886 /* ReadMeApp.swift in Sources */,
 				F21F6C86268A7035009395E7 /* Library.swift in Sources */,
 				F2266933268B72EC0038C4F3 /* PHPickerViewController.View.swift in Sources */,
