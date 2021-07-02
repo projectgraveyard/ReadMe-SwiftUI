@@ -34,7 +34,7 @@ enum Section {
     case finished
 }
 
-class Library: ObservableObject {
+final class Library: ObservableObject {
     var sortedBooks: [Book] { booksCache }
     
     var manuallySortedBooks: [Section: [Book]] {
@@ -47,6 +47,8 @@ class Library: ObservableObject {
         booksCache.insert(book, at: 0)
         uiImages[book] = image
     }
+    
+    @Published var uiImages: [Book: UIImage] = [:]
 
     /// An in-memory cache of the manually-sorted books that are persistently stored.
     @Published private var booksCache: [Book] = [
@@ -62,11 +64,11 @@ class Library: ObservableObject {
         .init(title: "Drawing People", author: "Barbara Bradley"),
         .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
     ]
-
-    @Published var uiImages: [Book: UIImage] = [:]
 }
 
-extension Section {
+// MARK: - private
+
+private extension Section {
     init(readMe: Bool) {
         self = readMe ? .readMe : .finished
     }
