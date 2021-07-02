@@ -46,9 +46,14 @@ final class Library: ObservableObject {
     func addNewBook(_ book: Book, image: UIImage?) {
         booksCache.insert(book, at: 0)
         uiImages[book] = image
+        storeCancellable(for: book)
     }
     
     @Published var uiImages: [Book: UIImage] = [:]
+    
+    init() {
+        booksCache.forEach(storeCancellable)
+    }
 
     /// An in-memory cache of the manually-sorted books that are persistently stored.
     @Published private var booksCache: [Book] = [
@@ -64,9 +69,21 @@ final class Library: ObservableObject {
         .init(title: "Drawing People", author: "Barbara Bradley"),
         .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
     ]
+    
+    /// Forwards individual book changes to be considered lIbrary changes
+    private var cancellables: Set<AnyCancellable> = []
 }
 
 // MARK: - private
+
+private extension Library {
+    func storeCancellable(for book: Book){
+        book.$readMe.sink() { [unowned self] _ in
+            objectWillChange.send()
+        }
+        .store(in: &cancellables)
+    }
+}
 
 private extension Section {
     init(readMe: Bool) {
