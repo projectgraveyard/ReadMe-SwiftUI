@@ -33,6 +33,10 @@ struct BookRow: View {
                 )
                 TitleAndAuthorStack(book: book, titleFont: .title2, authorFont: .title3)
                     .lineLimit(1)
+                Spacer()
+                BookmarkButton(book: book)
+                    .buttonStyle(BorderlessButtonStyle())
+                
             }
             .padding(.vertical, 8)
         }

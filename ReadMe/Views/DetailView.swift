@@ -16,7 +16,14 @@ struct DetailView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TitleAndAuthorStack(book: book, titleFont: .title, authorFont: .title2)
+            HStack(spacing: 16) {
+                BookmarkButton(book: book)
+                TitleAndAuthorStack(
+                    book: book,
+                    titleFont: .title,
+                    authorFont: .title2
+                )
+            }
             VStack {
                 Book.Image(
                     uiImage: image,

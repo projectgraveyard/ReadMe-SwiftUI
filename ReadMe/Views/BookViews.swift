@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct BookmarkButton: View {
-    var book: Book
-    let bookmark = "bookmark"
+    @ObservedObject var book: Book
     
     var body: some View {
+        let bookmark = "bookmark"
         Button(action: {book.readMe.toggle()}) {
             Image(systemName: book.readMe ? "\(bookmark).fill" : "\(bookmark)")
                 .font(.system(size: 48, weight: .light))
-            
         }
     }
 }
