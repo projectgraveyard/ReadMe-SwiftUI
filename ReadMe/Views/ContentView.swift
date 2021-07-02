@@ -25,7 +25,11 @@ struct BookRow: View {
     var body: some View {
         NavigationLink(destination: DetailView(book: book, image: $image)){
             HStack {
-                Book.Image(title: book.title, size: 80)
+                Book.Image(
+                    uiImage: image,
+                    title: book.title,
+                    size: 80
+                )
                 TitleAndAuthorStack(book: book, titleFont: .title2, authorFont: .title3)
                     .lineLimit(1)
             }

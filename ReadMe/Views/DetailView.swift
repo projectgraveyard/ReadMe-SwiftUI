@@ -16,7 +16,7 @@ struct DetailView: View {
         VStack(alignment: .leading) {
             TitleAndAuthorStack(book: book, titleFont: .title, authorFont: .title2)
             VStack {
-                Book.Image(title: book.title)
+                Book.Image(uiImage: image, title: book.title)
                 Button(
                     "Update Image",
                     action: {showingImagePicker = true}
