@@ -7,10 +7,24 @@
 
 import SwiftUI
 
+struct BookmarkButton: View {
+    var book: Book
+    let bookmark = "bookmark"
+    
+    var body: some View {
+        Button(action: {book.readMe.toggle()}) {
+            Image(systemName: book.readMe ? "\(bookmark).fill" : "\(bookmark)")
+                .font(.system(size: 48, weight: .light))
+            
+        }
+    }
+}
+
 struct TitleAndAuthorStack: View {
     let book: Book
     let titleFont: Font
     let authorFont: Font
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(book.title)
@@ -52,7 +66,15 @@ extension Book {
 struct Book_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TitleAndAuthorStack(book: .init(), titleFont: .title, authorFont: .title2)
+            HStack {
+                BookmarkButton(book: .init())
+                BookmarkButton(book: .init(readMe: false))
+                TitleAndAuthorStack(
+                    book: .init(),
+                    titleFont: .title,
+                    authorFont: .title2
+                )
+            }
             Book.Image(title: Book().title)
             Book.Image(title: "")
             Book.Image(title: "📖")
