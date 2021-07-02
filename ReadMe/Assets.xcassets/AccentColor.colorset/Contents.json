@@ -15,7 +15,7 @@
         }
       ],
       "color" : {
-        "platform" : "tvos",
+        "platform" : "ios",
         "reference" : "systemOrangeColor"
       },
       "idiom" : "universal"

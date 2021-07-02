@@ -46,6 +46,7 @@ struct Book_Previews: PreviewProvider {
             Book.Image(title: "")
             Book.Image(title: "📖")
         }
+        .previewedInAllColorSchemes
     }
 }
 
@@ -57,5 +58,15 @@ extension Image {
             UIImage(systemName: symbolName) != nil
         else {return nil}
         self.init(systemName: symbolName)
+    }
+}
+
+extension View {
+    var previewedInAllColorSchemes: some View {
+        ForEach(
+            ColorScheme.allCases,
+            id: \.self,
+            content: preferredColorScheme
+        )
     }
 }
