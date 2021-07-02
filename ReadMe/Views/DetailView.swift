@@ -17,8 +17,11 @@ struct DetailView: View {
             TitleAndAuthorStack(book: book, titleFont: .title, authorFont: .title2)
             VStack {
                 Book.Image(title: book.title)
-                Button("Update Image", action: {showingImagePicker = true})
-                    .padding()
+                Button(
+                    "Update Image",
+                    action: {showingImagePicker = true}
+                )
+                .padding()
             }
             Spacer()
         }
