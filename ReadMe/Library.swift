@@ -29,9 +29,19 @@
 import Combine
 import class UIKit.UIImage
 
+enum Section {
+    case readMe
+    case finished
+}
+
 class Library: ObservableObject {
     var sortedBooks: [Book] { booksCache }
     
+    var manuallySortedBooks: [Section: [Book]] {
+        Dictionary(grouping: booksCache, by: \.readMe)
+            .mapKeys(Section.init)
+    }
+
     /// Adds a new book at the start of the library's manually-sorted books.
     func addNewBook(_ book: Book, image: UIImage?) {
         booksCache.insert(book, at: 0)
@@ -54,6 +64,12 @@ class Library: ObservableObject {
     ]
 
     @Published var uiImages: [Book: UIImage] = [:]
+}
+
+extension Section {
+    init(readMe: Bool) {
+        self = readMe ? .readMe : .finished
+    }
 }
 
 private extension Dictionary {
