@@ -5,11 +5,13 @@
 //  Created by Dominic Swaine on 26/06/2021.
 //
 
-class Book {
+import Combine
+
+class Book: ObservableObject {
     let title: String
     let author: String
-    var microReview: String
-    var readMe: Bool
+    @Published var microReview: String
+    @Published var readMe: Bool
     
     init(
         title: String = "Title",
