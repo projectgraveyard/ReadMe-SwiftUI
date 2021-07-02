@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State var library = Library()
+    @State var addingNewBook = false
     
     var body: some View {
         NavigationView {
             List {
-                Button(action: {}){
+                Button(action: {addingNewBook = true}){
                     Spacer()
                     VStack(spacing: 6) {
                         Image(systemName: "book.circle")
@@ -25,6 +26,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(BorderlessButtonStyle())
                 .padding(.vertical, 8)
+                .sheet(isPresented: $addingNewBook, content: NewBookView.init)
                 
                 ForEach(library.sortedBooks) { book in
                     BookRow(book: book, image: $library.uiImages[book])
