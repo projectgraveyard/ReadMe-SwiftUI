@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var library = Library()
+    @EnvironmentObject var library: Library
     @State var addingNewBook = false
     
     var body: some View {
@@ -28,9 +28,7 @@ struct ContentView: View {
                 .padding(.vertical, 8)
                 .sheet(isPresented: $addingNewBook, content: NewBookView.init)
                 
-                ForEach(library.sortedBooks) { book in
-                    BookRow(book: book, image: $library.uiImages[book])
-                }
+                ForEach(library.sortedBooks) { book in BookRow(book: book)}
             }
             .navigationBarTitle("My Library")
         }
@@ -39,12 +37,13 @@ struct ContentView: View {
 
 struct BookRow: View {
     @ObservedObject var book: Book
-    @Binding var image: UIImage?
+    @EnvironmentObject var library: Library
+    
     var body: some View {
-        NavigationLink(destination: DetailView(book: book, image: $image)){
+        NavigationLink(destination: DetailView(book: book)){
             HStack {
                 Book.Image(
-                    uiImage: image,
+                    uiImage: library.uiImages[book],
                     title: book.title,
                     size: 80,
                     cornerRadius: 12
@@ -76,6 +75,7 @@ struct BookRow: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Library())
             .previewedInAllColorSchemes
     }
 }
