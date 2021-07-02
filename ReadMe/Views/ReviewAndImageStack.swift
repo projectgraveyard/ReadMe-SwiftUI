@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import class PhotosUI.PHPickerViewController
 
 struct ReviewAndImageStack: View {
     @ObservedObject var book: Book

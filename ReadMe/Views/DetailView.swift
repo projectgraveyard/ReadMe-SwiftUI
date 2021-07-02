@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import class PhotosUI.PHPickerViewController
 
 struct DetailView: View {
     @ObservedObject var book: Book
