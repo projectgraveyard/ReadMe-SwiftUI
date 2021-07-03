@@ -32,6 +32,7 @@ struct ContentView: View {
                     SectionView(section: $0)
                 }
             }
+            .toolbar(content: EditButton.init)
             .navigationBarTitle("My Library")
         }
     }
@@ -104,6 +105,13 @@ private struct SectionView: View {
                 ForEach(books){BookRow(book: $0)}
                 .onDelete { indexSet in
                     library.deleteBooks(atOffsets: indexSet, section: section)
+                }
+                .onMove {indices, newOffset in
+                    library.moveBooks(
+                        oldOffsets: indices,
+                        newOffset: newOffset,
+                        section: section
+                    )
                 }
             }
         }

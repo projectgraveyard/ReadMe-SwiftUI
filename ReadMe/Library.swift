@@ -81,6 +81,10 @@ final class Library: ObservableObject {
             }
         }
     }
+    
+    func moveBooks(oldOffsets: IndexSet, newOffset: Int, section: Section) {
+        manuallySortedBooks[section]?.move(fromOffsets: oldOffsets, toOffset: newOffset)
+    }
 
   /// Load, save, or delete an image corresponding to a book's title and author.
   var uiImages: ObjectSubscript<Library, Book, UIImage?> {
