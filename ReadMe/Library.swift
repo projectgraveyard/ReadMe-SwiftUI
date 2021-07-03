@@ -32,12 +32,20 @@ import struct SwiftUI.PreviewDevice
 import class UIKit.UIImage
 
 enum Section: CaseIterable {
-  case readMe
-  case finished
+    case readMe
+    case finished
+}
+
+enum SortStyle: CaseIterable {
+    case title
+    case author
+    case manual
 }
 
 final class Library: ObservableObject {
+    @Published var sortStyle: SortStyle = .manual
     
+    /// The library's books, sorted by its `sortStyle`.
     var sortedBooks: [Book] {
         get { booksCache }
         set {
