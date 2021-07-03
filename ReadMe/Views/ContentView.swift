@@ -102,6 +102,9 @@ private struct SectionView: View {
                     .listRowInsets(.init())
             ){
                 ForEach(books){BookRow(book: $0)}
+                .onDelete { indexSet in
+                    library.deleteBooks(atOffsets: indexSet, section: section)
+                }
             }
         }
     }

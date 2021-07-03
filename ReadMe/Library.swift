@@ -37,19 +37,50 @@ enum Section: CaseIterable {
 }
 
 final class Library: ObservableObject {
-  var sortedBooks: [Book] { booksCache }
+    
+    var sortedBooks: [Book] {
+        get { booksCache }
+        set {
+            booksCache.removeAll { book in
+                !newValue.contains(book)
+            }
+        }
+    }
 
-  var manuallySortedBooks: [Section: [Book]] {
-    Dictionary(grouping: booksCache, by: \.readMe)
-      .mapKeys(Section.init)
-  }
+    var manuallySortedBooks: [Section: [Book]] {
+        get {
+            Dictionary(grouping: booksCache, by: \.readMe)
+                .mapKeys(Section.init)
+        }
+        set {
+            booksCache = newValue
+                .sorted {$1.key == .finished}
+                .flatMap { $0.value }
+        }
+    }
 
-  /// Adds a new book at the start of the library's manually-sorted books.
-  func addNewBook(_ book: Book, image: UIImage?) {
-    booksCache.insert(book, at: 0)
-    uiImages[book] = image
-    storeCancellables(for: book)
-  }
+    /// Adds a new book at the start of the library's manually-sorted books.
+    func addNewBook(_ book: Book, image: UIImage?) {
+        booksCache.insert(book, at: 0)
+        uiImages[book] = image
+        storeCancellables(for: book)
+    }
+    
+    func deleteBooks(atOffsets offsets: IndexSet, section: Section?) {
+        let booksBeforeDeletion = booksCache
+        
+        if let section = section {
+            manuallySortedBooks[section]?.remove(atOffsets: offsets)
+        } else {
+            sortedBooks.remove(atOffsets: offsets)
+        }
+        
+        for change in booksCache.difference(from: booksBeforeDeletion) {
+            if case .remove(_, let deletedBook, _) = change {
+                uiImages[deletedBook] = nil
+            }
+        }
+    }
 
   /// Load, save, or delete an image corresponding to a book's title and author.
   var uiImages: ObjectSubscript<Library, Book, UIImage?> {
